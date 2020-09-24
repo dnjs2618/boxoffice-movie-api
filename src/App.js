@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
+import MovieTemplate from "./MovieTemplate";
 
 function App() {
   const [input, setInput] = useState("");
   const [date, setDate] = useState(null);
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(false);
+  const focusInput = useRef(null);
 
   const onSubmit = (e) => {
     e.preventDefault(); //새로고침 방지를 위한 작업
@@ -16,6 +18,8 @@ function App() {
       alert("숫자만 입력해주세요"); //isNaN으로 문자열을 넣었을때 숫자를 입력해달라는 코드
     }
     setDate(input);
+    setInput("");
+    focusInput.current.focus();
   };
 
   const onChange = (e) => {
@@ -23,12 +27,13 @@ function App() {
   };
 
   useEffect(() => {
+    focusInput.current.focus();
     const fetchMovies = async () => {
       try {
         const query = date || "20200202";
         setLoading(true);
         const response = await axios.get(
-          `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.REACT_APP_API_KEY}&targetDt=20200101`
+          `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.REACT_APP_API_KEY}&targetDt=${query}`
         );
         console.log(response.data);
       } catch (e) {
@@ -37,19 +42,15 @@ function App() {
       setLoading(false);
     };
     fetchMovies();
-  }, []);
+  }, [date]);
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={input}
-          placeholder="원하는날짜를 입력하세요(20190202)"
-          onChange={onChange}
-        />
-        {console.log(process.env.REACT_APP_API_KEY)}
-        <button type="submit">입력하기</button>
-      </form>
+      <MovieTemplate
+        onSubmit={onSubmit}
+        onChange={onChange}
+        input={input}
+        focusInput={focusInput}
+      />
     </div>
   );
 }
