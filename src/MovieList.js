@@ -1,19 +1,19 @@
 import React from "react";
 import MovieItem from "./MovieItem";
 
-const MovieList = () => {
-  const title = "하하하하";
-  const rank = "1";
-  const rankOldAndNew = "NEW";
+const MovieList = ({ movies }) => {
   return (
     <div>
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
-      <MovieItem title={title} rank={rank} rankOldAndNew={rankOldAndNew} />
+      {movies.map((movie) => {
+        return (
+          <MovieItem
+            key={movie.movieNm}
+            title={movie.movieNm}
+            rank={movie.rank}
+            rankOldAndNew={movie.rankOldAndNew}
+          />
+        );
+      })}
     </div>
   );
 };

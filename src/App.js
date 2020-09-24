@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import MovieTemplate from "./MovieTemplate";
 
@@ -7,7 +7,6 @@ function App() {
   const [date, setDate] = useState(null);
   const [movies, setMovies] = useState(null);
   const [loading, setLoading] = useState(false);
-  const focusInput = useRef(null);
 
   const onSubmit = (e) => {
     e.preventDefault(); //새로고침 방지를 위한 작업
@@ -19,7 +18,6 @@ function App() {
     }
     setDate(input);
     setInput("");
-    focusInput.current.focus();
   };
 
   const onChange = (e) => {
@@ -27,7 +25,6 @@ function App() {
   };
 
   useEffect(() => {
-    focusInput.current.focus();
     const fetchMovies = async () => {
       try {
         const query = date || "20200202";
@@ -35,7 +32,7 @@ function App() {
         const response = await axios.get(
           `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.REACT_APP_API_KEY}&targetDt=${query}`
         );
-        console.log(response.data);
+        setMovies(response.data.boxOfficeResult.dailyBoxOfficeList);
       } catch (e) {
         console.log(e);
       }
@@ -43,13 +40,22 @@ function App() {
     };
     fetchMovies();
   }, [date]);
+
+  if (!movies) {
+    return null;
+  }
+  if (loading) {
+    return <div>로딩중..</div>;
+  }
+
   return (
     <div>
       <MovieTemplate
         onSubmit={onSubmit}
         onChange={onChange}
         input={input}
-        focusInput={focusInput}
+        date={date}
+        movies={movies}
       />
     </div>
   );

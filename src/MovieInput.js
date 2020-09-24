@@ -31,20 +31,20 @@ const MovieInputBlock = styled.div`
   }
 `;
 
-const MovieInput = ({ onSubmit, onChange, input, focusInput }) => {
+const MovieInput = ({ onSubmit, onChange, input }) => {
   return (
     <MovieInputBlock>
-      <>
+      <div>
         <form className="form-input" onSubmit={onSubmit}>
           <input
             placeholder="날짜를입력하세요(ex)20201012)"
             value={input}
             onChange={onChange}
-            ref={focusInput}
           />
+
           <button type="submit">날짜검색</button>
         </form>
-      </>
+      </div>
     </MovieInputBlock>
   );
 };
