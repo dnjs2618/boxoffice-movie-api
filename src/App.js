@@ -30,7 +30,7 @@ function App() {
         const query = date || "20200202";
         setLoading(true);
         const response = await axios.get(
-          `http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.REACT_APP_API_KEY}&targetDt=${query}`
+          `https://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=${process.env.REACT_APP_API_KEY}&targetDt=${query}`
         );
         setMovies(response.data.boxOfficeResult.dailyBoxOfficeList);
       } catch (e) {
