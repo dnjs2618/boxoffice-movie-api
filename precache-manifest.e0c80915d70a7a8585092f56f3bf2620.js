@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6c5784558e0b111d449eac77f8c193b5",
+    "revision": "a904e395a011f9e33b99296b72f68c38",
     "url": "/boxoffice-movie-api/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/boxoffice-movie-api/static/js/2.e19cf0c1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "c1367542b0e7d3c56743",
-    "url": "/boxoffice-movie-api/static/js/main.fe91cdce.chunk.js"
+    "revision": "f1ea2bb07c63fc7bb9c1",
+    "url": "/boxoffice-movie-api/static/js/main.9d233f4b.chunk.js"
   },
   {
     "revision": "b85f099154668cf8ab50",

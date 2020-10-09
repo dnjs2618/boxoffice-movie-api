@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/boxoffice-movie-api/precache-manifest.1a825a5739bd281862af61ecd4b73656.js"
+  "/boxoffice-movie-api/precache-manifest.e0c80915d70a7a8585092f56f3bf2620.js"
 );
 
 self.addEventListener('message', (event) => {
