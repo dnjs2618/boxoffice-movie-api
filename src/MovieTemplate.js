@@ -14,14 +14,7 @@ const MovieTemplateBlock = styled.div`
   }
 `;
 
-const MovieTemplate = ({
-  movies,
-  onSubmit,
-  onChange,
-  input,
-
-  date,
-}) => {
+const MovieTemplate = ({ movies, onSubmit, onChange, input, date }) => {
   return (
     <MovieTemplateBlock>
       <div className="template">
