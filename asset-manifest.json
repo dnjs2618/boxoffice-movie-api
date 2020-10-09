@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/boxoffice-movie-api/static/js/main.fe91cdce.chunk.js",
+    "main.js.map": "/boxoffice-movie-api/static/js/main.fe91cdce.chunk.js.map",
+    "runtime-main.js": "/boxoffice-movie-api/static/js/runtime-main.2a3f59db.js",
+    "runtime-main.js.map": "/boxoffice-movie-api/static/js/runtime-main.2a3f59db.js.map",
+    "static/js/2.e19cf0c1.chunk.js": "/boxoffice-movie-api/static/js/2.e19cf0c1.chunk.js",
+    "static/js/2.e19cf0c1.chunk.js.map": "/boxoffice-movie-api/static/js/2.e19cf0c1.chunk.js.map",
+    "index.html": "/boxoffice-movie-api/index.html",
+    "precache-manifest.1a825a5739bd281862af61ecd4b73656.js": "/boxoffice-movie-api/precache-manifest.1a825a5739bd281862af61ecd4b73656.js",
+    "service-worker.js": "/boxoffice-movie-api/service-worker.js",
+    "static/js/2.e19cf0c1.chunk.js.LICENSE.txt": "/boxoffice-movie-api/static/js/2.e19cf0c1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2a3f59db.js",
+    "static/js/2.e19cf0c1.chunk.js",
+    "static/js/main.fe91cdce.chunk.js"
+  ]
+}
